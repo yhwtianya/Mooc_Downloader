@@ -64,7 +64,9 @@ def mooc_interface():
                     if isdownload:
                         print('"{}" 下载完毕!'.format(mooc.title))
                         print("下载路径: {}".format(mooc.rootDir))
-                        os.startfile(mooc.rootDir)
+                        # os.startfile 在 Windows 系统好用，在 MacOS 报错，错误信息 "sh: pause: command not found"。在macOS改为用 os.system
+                        # os.startfile(mooc.rootDir)
+                        os.system("open " + mooc.rootDir)
                     else:
                         print('"{}" 还未开课！'.format(mooc.title))
                     input("请按回车键返回主界面...")

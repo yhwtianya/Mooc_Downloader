@@ -32,10 +32,10 @@ LENGTH = 80
 # 变量，可修改的参数
 download_speed = "0"
 if getattr(sys, 'frozen', False): #是否打包
-    aria2_path = os.path.join(sys._MEIPASS, "aria2c.exe")
+    aria2_path = os.path.join(sys._MEIPASS, "aria2c")
     alipay_path = os.path.join(sys._MEIPASS, "Alipay.jpg")
 else:
-    aria2_path = os.path.join(PATH, "aria2c.exe")
+    aria2_path = os.path.join(PATH, "aria2c")
     alipay_path = os.path.join(PATH, "Alipay.jpg")
 aira2_cmd = '%s --header "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36 -- fUcIvJ01pZVQhNq23lXm9gjazkeonsCx" --check-certificate=false -x 16 -s 64 -j 64 -k 2M --disk-cache 128M --max-overall-download-limit %s "{url:}" -d "{dirname:}" -o "{filename:}"'%(aria2_path, download_speed)
 
